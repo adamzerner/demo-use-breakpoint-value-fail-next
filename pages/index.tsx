@@ -1,6 +1,9 @@
+import { useBreakpointValue } from '@chakra-ui/react';
 import Head from 'next/head'
 
 export default function Home() {
+  const isMobile = useBreakpointValue({ base: true, md: false }) as boolean;
+  
   return (
     <>
       <Head>
@@ -11,6 +14,7 @@ export default function Home() {
       </Head>
       <main>
         Hello World
+        <p>isMobile: {isMobile.toString()}</p>
       </main>
     </>
   )
